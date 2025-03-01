@@ -1,0 +1,47 @@
+1. Ogrenci ID   Adı      Soyadı    Sınıf  
+1            Ali      Yılmaz      3  
+2           alper       ayran     1 
+3            Mehmet   Kara        4  
+
+Ogrenci ID: Her öğrencinin kendine özel numarası
+Adı & Soyadı: Öğrencinin ismi
+Sınıf: Kaçıncı sınıfta olduğu
+Bu şekilde veriler daha düzenli saklanır ve erişim kolaylaşır
+
+2. Geleneksel dosyalama sistemleri ile veritabanı yönetim sistemleri arasındaki farklar
+İkisi de veri saklamak için kullanılır ama dosyalama sistemlerinde veriler tek tek dosyalara yazılır ve yönetmesi zordur. Veritabanları ise daha düzenli çalışır veri tekrarını önler ve hızlıdır
+
+3. VTYS’nin geleneksel sistemlere göre avantajları
+Verilerin düzenli saklanmasını sağlar. Aynı anda birden fazla kullanıcı erişebilir. Veri kaybını önler ve güvenliği daha iyidir.
+
+4. Veritabanı nedir ve nerelerde kullanılır
+Bilgilerin saklandığı sistemdir. Bankalar, hastaneler, okullar, şirketler gibi birçok yerde kullanılır
+
+5. Tablo, satır ve sütun nedir
+Tablo verilerin saklandığı yapıdır. Satır her bir veri kaydını temsil eder. Sütun ise belirli bir türdeki bilgileri içerir, örneğin isim veya telefon numarası gibi
+
+6. Birincil anahtar ve yabancı anahtar farkı
+Birincil anahtar her kaydı benzersiz yapan alandır. Yabancı anahtar ise başka bir tablodaki birincil anahtarla bağlantı kurar
+
+7. Veritabanı kullanıcıları
+Admin tüm yetkilere sahiptir. Normal kullanıcılar sadece belirli verilere ulaşabilir. Geliştiriciler ise sistemin teknik kısmını yönetir
+
+8. Örnek bir veritabanı ve yetkilendirme
+Bir okul sisteminde öğrenciler kendi bilgilerini görebilir, öğretmenler not girebilir, yönetim tüm verilere erişebilir
+
+9. Veritabanı ve VTYS farkı
+Veritabanı sadece bilgilerin tutulduğu yerdir. VTYS ise bu bilgileri düzenlemek, eklemek ve yönetmek için kullanılan bir sistemdir
+
+10. İlişkisel veri modeli nedir
+Verilerin farklı tablolar halinde saklandığı ve tabloların belirli alanlar üzerinden birbirleriyle bağlantılı olduğu bir sistemdir
+
+11. Öğrenci bilgi sistemi için veritabanı yapısı
+Öğrenciler tablosunda öğrenci numarası, isim ve bölüm olur Dersler tablosunda ders kodu ve ders adı olur. Notlar tablosunda öğrenci numarası, ders kodu ve not bilgisi bulunur. Öğrenci numarası hem öğrenciler tablosunda birincil anahtar hem de notlar tablosunda yabancı anahtar olur
+
+
+
+
+
+
+
+
