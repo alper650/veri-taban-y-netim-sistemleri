@@ -19,11 +19,14 @@ CREATE TABLE Adresler (
 );
 
 
+
+
 CREATE TABLE Kutuphane (
     KutuphaneNo INT PRIMARY KEY AUTO_INCREMENT,
     KutuphaneAdi VARCHAR(255) NOT NULL,
     Aciklama TEXT
 );
+
 
 
 CREATE TABLE Kitaplar (
@@ -35,15 +38,23 @@ CREATE TABLE Kitaplar (
 );
 
 
+
+
 CREATE TABLE Yazarlar (
     YazarNo INT PRIMARY KEY AUTO_INCREMENT,
     YazarAdi VARCHAR(100),
     YazarSoyadi VARCHAR(100)
 );
+
+
+
 CREATE TABLE Kategoriler (
     KategoriNo INT PRIMARY KEY AUTO_INCREMENT,
     KategoriAdi VARCHAR(100)
 );
+
+
+
 CREATE TABLE Emanetler (
     EmanetNo INT PRIMARY KEY AUTO_INCREMENT,
     UyeNo INT,
@@ -53,6 +64,9 @@ CREATE TABLE Emanetler (
     FOREIGN KEY (UyeNo) REFERENCES Uyeler(UyeNo),
     FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID)
 );
+
+
+
 CREATE TABLE Kitap_Kategori (
     KitapID INT,
     KategoriNo INT,
@@ -60,6 +74,9 @@ CREATE TABLE Kitap_Kategori (
     FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID),
     FOREIGN KEY (KategoriNo) REFERENCES Kategoriler(KategoriNo)
 );
+
+
+
 CREATE TABLE Kitap_Yazar (
     KitapID INT,
     YazarNo INT,
@@ -67,6 +84,9 @@ CREATE TABLE Kitap_Yazar (
     FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID),
     FOREIGN KEY (YazarNo) REFERENCES Yazarlar(YazarNo)
 );
+
+
+
 CREATE TABLE Kutuphane_Kitap (
     KutuphaneNo INT,
     KitapID INT,
