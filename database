@@ -1,1 +1,77 @@
+CREATE TABLE Uyeler (
+    UyeNo INT PRIMARY KEY AUTO_INCREMENT,
+    UyeAdi VARCHAR(100) NOT NULL,
+    UyeSoyadi VARCHAR(100) NOT NULL,
+    Cinsiyet VARCHAR(10),
+    Telefon VARCHAR(15),
+    Eposta VARCHAR(255) UNIQUE
+);
 
+
+CREATE TABLE Adresler (
+    AdresNo INT PRIMARY KEY AUTO_INCREMENT,
+    Sehir VARCHAR(50),
+    Mahalle VARCHAR(100),
+    BinaNo VARCHAR(10),
+    Cadde VARCHAR(100),
+    PostaKodu VARCHAR(10),
+    Ulke VARCHAR(50)
+);
+
+
+CREATE TABLE Kutuphane (
+    KutuphaneNo INT PRIMARY KEY AUTO_INCREMENT,
+    KutuphaneAdi VARCHAR(255) NOT NULL,
+    Aciklama TEXT
+);
+
+
+CREATE TABLE Kitaplar (
+    KitapID INT PRIMARY KEY AUTO_INCREMENT,
+    KitapAdi VARCHAR(255) NOT NULL,
+    ISBN VARCHAR(20) UNIQUE,
+    SayfaSayisi INT,
+    YayinTarihi DATE
+);
+
+
+CREATE TABLE Yazarlar (
+    YazarNo INT PRIMARY KEY AUTO_INCREMENT,
+    YazarAdi VARCHAR(100),
+    YazarSoyadi VARCHAR(100)
+);
+CREATE TABLE Kategoriler (
+    KategoriNo INT PRIMARY KEY AUTO_INCREMENT,
+    KategoriAdi VARCHAR(100)
+);
+CREATE TABLE Emanetler (
+    EmanetNo INT PRIMARY KEY AUTO_INCREMENT,
+    UyeNo INT,
+    KitapID INT,
+    EmanetTarihi DATE,
+    TeslimTarihi DATE,
+    FOREIGN KEY (UyeNo) REFERENCES Uyeler(UyeNo),
+    FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID)
+);
+CREATE TABLE Kitap_Kategori (
+    KitapID INT,
+    KategoriNo INT,
+    PRIMARY KEY (KitapID, KategoriNo),
+    FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID),
+    FOREIGN KEY (KategoriNo) REFERENCES Kategoriler(KategoriNo)
+);
+CREATE TABLE Kitap_Yazar (
+    KitapID INT,
+    YazarNo INT,
+    PRIMARY KEY (KitapID, YazarNo),
+    FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID),
+    FOREIGN KEY (YazarNo) REFERENCES Yazarlar(YazarNo)
+);
+CREATE TABLE Kutuphane_Kitap (
+    KutuphaneNo INT,
+    KitapID INT,
+    Miktar INT,
+    PRIMARY KEY (KutuphaneNo, KitapID),
+    FOREIGN KEY (KutuphaneNo) REFERENCES Kutuphane(KutuphaneNo),
+    FOREIGN KEY (KitapID) REFERENCES Kitaplar(KitapID)
+);
